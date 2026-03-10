@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title th:text="Etiqueta ' +$(etiqueta)"></title>
+</head>
+<body>
+<h1>
+  &lt;<span th:text="$(etiqueta)"></span>&gt;
+</h1>
+<h2>Descripcion</h2>
+<p>Esta es una etiqueta del lenguaje HTML,
+  su proposito es definir hacer un encabezado o titulo dentro del cuerpo,
+al tener el numero 1, este es el primer encabezado y suele ser el mas importante</p>
+<h3>Sintaxis</h3>
+<pre><code>
+        &lt;<span th:text="${etiqueta}"></span>&gt;
+        contenido &lt;/<span th:text="${etiqueta}"></span>&gt;
+    </code></pre>
+<h4>Ejemplo</h4>
+<div>
+  <p th:if="$(etiqueta=='p')">Ejemplo de uso de la etiqueta</p>
+  <img th:if="$(etiqueta=='img')"
+       src="">
+  <ul th:if="${etiqueta=='ul'}">
+    <li>Elemento 1</li>
+    <li>Elemento 2</li>
+  </ul>
+  <table th:if="${etiqueta=='table'}" border="1">
+    <tr><th>Nombre</th><th>Edad</th></tr>
+    <tr><td>Ana</td><td>20</td></tr>
+  </table>
+</div>
+<br>
+<div>
+  <a th:if="${prev!=null}" th:href="@{/etiqueta/{name}(name=${prev})}">
+    Anterior
+  </a>
+  <a th:if="${next!=null}" th:href="@{/etiqueta/{name}(name=${next})}">
+    Siguiente
+  </a>
+</div>
+<br>
+<a href="/">Volver al inicio</a>
+</body>
+</html>

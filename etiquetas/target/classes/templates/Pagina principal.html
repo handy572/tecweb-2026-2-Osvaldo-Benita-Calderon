@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Etiquetas HTML</title>
+</head>
+<body>
+    <h1>Etiquetas HTML</h1>
+    <ul>
+        <li th:each="etiqueta: $(etiquetas)">
+        <a th:href="@{/etiqueta/{name}(name=${etiqueta})}">
+           &lt; <span th:text="${etiqueta}"></span>&gt;
+        </a>
+        </li>
+    </ul>
+</body>
+</html>
