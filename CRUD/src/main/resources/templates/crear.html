@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear categoria</title>
+</head>
+<body>
+    <h1>Crear nueva categoria</h1>
+    <form action="/categorias/guardar" method="post">
+
+        <label>ID:</label><br>
+        <input type="number" name="id" required><br>
+
+        <label>Nombre:</label><br>
+        <input type="text" name="nombre" required><br>
+
+        <label>Descripción:</label><br>
+        <textarea name="descripcion"></textarea><br>
+
+        <label>Fecha de creación:</label><br>
+        <input type="date" name="fecha_creacion" required><br>
+
+        <button type="submit">Guardar</button>
+        <a href="/categorias">
+            <button type="button">Cancelar</button>
+        </a>
+    </form>
+</body>
+</html>
